@@ -1,0 +1,16 @@
+﻿@model MobileStore.Models.Manufacturer
+           
+@{
+    ViewBag.Title = String.Format("Удаление производителя | {0}", MobileStore.Constants.Title);
+}
+
+<p>@Html.ActionLink("Отмена","Details", new {id = Model.ID})</p>
+<h2 style="color:Red">Вы уверены, что хотите удалить этого производителя?</h2>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить"/>
+}
+
+<p style="font-weight:bold">@Model.Name</p>
+<p>@Model.Description</p>

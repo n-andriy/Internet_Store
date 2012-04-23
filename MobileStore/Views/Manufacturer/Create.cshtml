@@ -1,0 +1,24 @@
+﻿@model MobileStore.Models.Manufacturer
+
+@{
+    ViewBag.Title = String.Format("Создание производителя | {0}", MobileStore.Constants.Title);
+}
+
+<p>@Html.ActionLink("Отмена", "Index")</p>
+<h2>Создание производителя</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    <br />
+    @Html.EditorFor(model => model.Name)
+    <br /><br />
+    
+    @Html.LabelFor(model => model.Description)
+    <br />
+    @Html.TextAreaFor(model => model.Description, new { cols = 70, rows = 5 })
+    <br /><br />
+    
+    <input type="submit" value="Создать" />
+}
+

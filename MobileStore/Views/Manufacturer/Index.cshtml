@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MobileStore.Models.Manufacturer>
+           
+@{
+    ViewBag.Title = String.Format("Производители | {0}", MobileStore.Constants.Title);
+}
+
+<h2>Производители</h2>
+
+<p>@Html.ActionLink("Создать","Create")</p>
+
+<ul>
+    @foreach(var item in Model)
+    {
+        <li>@Html.ActionLink(item.Name, "Details", new {id = item.ID})</li>
+    }
+</ul>
+
