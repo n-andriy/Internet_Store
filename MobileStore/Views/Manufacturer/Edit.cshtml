@@ -4,20 +4,15 @@
     ViewBag.Title = String.Format("Редактирование производителя | {0}", MobileStore.Constants.Title);
 }
 
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
 <p>@Html.ActionLink("Отмена", "Details", new { id = Model.ID })</p>
 <h2>Редактирование производителя</h2>
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Name)
-    <br />
-    @Html.EditorFor(model => model.Name)
-    <br /><br />
-    
-    @Html.LabelFor(model => model.Description)
-    <br />
-    @Html.TextAreaFor(model => model.Description, new { cols = 70, rows = 5 })
-    <br /><br />
+    @Html.EditorForModel()
     
     <input type="submit" value="Сохранить" />
 }

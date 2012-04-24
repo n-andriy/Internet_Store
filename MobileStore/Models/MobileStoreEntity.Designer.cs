@@ -200,7 +200,12 @@ namespace MobileStore.Models
         partial void OnDescriptionChanged();
 
         #endregion
-    
+
+        public int Id
+        {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
     }
 
     #endregion
